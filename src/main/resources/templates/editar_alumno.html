@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Editar alumno</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+	
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+			<a class="navbar-brand" href="#">Alumnos registrados</a>
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item"><a class="nav-link" th:ref="@{/alumnos}">Alumnos registrados</a></li>
+					
+				</ul>
+			</div>
+			
+	</nav>
+	
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-mod-6 col-sm-6 container justify.content-center card">
+				<h1 class="text-center">Edición de alumno</h1>
+				<div class="card-body">
+					<!--th:action="@{/alumnos/{id}(id=${alumno.id})}"-->
+					<!--th:action="@{/alumnos}"-->
+					<form th:action="@{/alumnos/{id}(id=${alumno.id})}" th:object="${alumno}" method="POST">
+						<!--<div class="form-group">
+							<label>Id: </label>
+							<input type="number" name="id" th:field="*{id}" class="form-control" placeholder="Ingrese el Id" required >
+						</div>-->
+						<br>
+						<div class="form-group">
+							<label><b>Carnet: </b></label>
+							<input type="number"  name="carnet_carrera" th:field="*{carnet_carrera}" class="form-control" placeholder="0000" required>
+							<br>
+							<input type="number" name="carnet_ano" th:field="*{carnet_ano}" class="form-control" placeholder="00" required>
+							<br>
+							<input type="number" name="carnet_serie" th:field="*{carnet_serie}" class="form-control" placeholder="00000" required>
+						</div>
+						<br>
+						<div class="form-group">
+							<label><b>Primer nombre: </b></label>
+							<input type="text" name="primer_nombre" th:field="*{primer_nombre}" class="form-control" placeholder="Ingrese el primer nombre" required>
+						</div>	
+						<br>
+						<div class="form-group">
+							<label><b>Segundo nombre: </b></label>
+							<input type="text" name="segundo_nombre" th:field="*{segundo_nombre}" class="form-control" placeholder="Ingrese el segundo nombre" required>
+						</div>	
+						<br>
+						<div class="form-group">
+							<label><b>Primer apellido: </b></label>
+							<input type="text" name="primer_apellido" th:field="*{primer_apellido}" class="form-control" placeholder="Ingrese el primer apellido" required>
+						</div>	
+						<br>
+						<div class="form-group">
+							<label><b>Segundo apellido: </b></label>
+							<input type="text" name="segundo_apellido" th:field="*{segundo_apellido}" class="form-control" placeholder="Ingrese el segundo apellido" required>
+						</div>	
+						<br>
+						<div class="form-group">
+							<label><b>Teléfono: </b></label>
+							<input type="tel" name="telefono" th:field="*{telefono}" class="form-control" placeholder="Ingrese el teléfono" required>
+						</div>	
+						<br>
+						<div class="form-group">
+							<label><b>Correo electronico: </b></label>
+							<input type="email" name="correo" th:field="*{correo}" class="form-control" placeholder="Ingrese el correo" required>
+						</div>	
+						<br>
+						<div class="form-group">
+							<label><b>Fecha de nacimiento: </b></label>
+							<input type="date" name="fecha_nacimiento" th:field="*{fecha_nacimiento}" class="form-control" placeholder="Ingrese fecha de nacimiento" required>
+						</div>	
+						<br>
+						
+						
+						
+						<div class="box-footer" justify="content-center">
+							<button type="submit" class="btn btn-success">Guardar</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+
+	
+</body>
+</html>
